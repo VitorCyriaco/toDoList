@@ -1,0 +1,31 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "API para gerenciar tarefas",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "init": "node init-db.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "backend",
+    "node",
+    "express",
+    "mysql",
+    "cors",
+    "dotenv"
+  ],
+  "author": "Vitor Cyriaco",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "yarn": "^1.22.22"
+  }
+}
