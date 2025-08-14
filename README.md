@@ -56,7 +56,7 @@ Siga os passos abaixo para configurar e rodar a aplicação completa em seu ambi
 
 1.  **Clone o repositório:**
     ```sh
-    git clone [https://github.com/vitorcyriaco/toDoList.git](https://github.com/vitorcyriaco/toDoList.git)
+    git clone https://github.com/vitorcyriaco/toDoList.git
     ```
 
 2.  **Navegue até a pasta do projeto:**
