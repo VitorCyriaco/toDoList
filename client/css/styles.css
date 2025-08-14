@@ -1,0 +1,211 @@
+/*  Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilização global */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+/* Estilização de todo o corpo da página */
+body {
+    background-color: #517FF6;
+
+    .container {
+        margin: 100px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 30px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Estilização do título do cabeçalho */
+.headerContainer h1 {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* Estilização do espaço onde estão os botões de ação */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 0;
+
+    /* Estilização de cada botão */
+    button {
+        background-color: rgba(255, 255, 255, 0.75);
+        border: none;
+        width: 180px;
+        height: 60px;
+        border-radius: 20px;
+        margin: 10px 10px;
+        cursor: pointer;
+        transition: 300ms;
+        font-weight: bold;
+        font-size: 1rem;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Mudança de cores ao passar o mouse por cima dos botões */
+    button:hover {
+        background-color: #517FF6;
+        color: #FFFFFF;
+    }
+
+    /* Estilização individual do botão de adicionar tarefa */
+    #buttonAdd {
+        width: 450px;
+        margin-right: 150px;
+    }
+
+    button.selected{
+        background-color: #517FF6;
+        color: #FFFFFF;
+    }
+}
+
+/* Estilização do espaço onde está a lista */
+.listContainer {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    /* Estilização do índice da lista */
+    .list {
+        display: grid;
+        grid-template-columns: 2fr 3fr 2fr 2fr 2fr 1fr;
+        gap: 10px;
+        padding: 8px 0;
+        align-items: center;
+
+        /* Estilização do texto do índice da lista */
+        p {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+/* Estilização do conteúdo da lista (as tarefas) */
+.taskItem {
+    border-bottom: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr 2fr 2fr 1fr;
+    gap: 10px;
+    padding: 8px 0;
+    align-items: center;
+
+    span{
+        font-size: 1rem;
+        color: #000000;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    /* Estilização do espaço onde está os botões de ação da lista */
+    .taskActions {
+        display: flex;
+        justify-content: space-between;
+
+        /* Estilização dos botões de ação da lista */
+        button {
+            width: 40px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            /* Estilização do ícone do botão para remover tarefa da lista */
+            img {
+                width: 25px;
+            }
+        }
+    }
+
+}
+
+/* Estilização do Modal (Tela sobreposta para inserir novas tarefas) -- Deixando o modal "invisível" */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Estilização do espaço do conteúdo de dentro do modal quando o mesmo está visível */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 5% auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    /* Estilização do título do modal */
+    h2 {
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+
+    label {
+        color: #FFFFFF;
+        font-size: 20px;
+    }
+
+    /* Estilização dos inputs do modal */
+    input,
+    select {
+        width: 100%;
+        height: 40px;
+        margin: 0 auto 20px auto;
+        border-radius: 8px;
+        border: none;
+        padding: 6px;
+        background-color: rgba(255, 255, 255, 0.75);
+        font-size: 20px;
+    }
+
+    /* Estilização do botão de salvar os dados inseridos no modal (tarefas) */
+    button {
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.75);
+        border: none;
+        width: 150px;
+        height: 40px;
+        border-radius: 8px;
+        place-self: center;
+        align-items: center;
+        justify-content: center;
+        transition: 300ms;
+        cursor: pointer;
+        margin: 20px 0;
+    }
+
+    /* Mudança de cores ao passar o mouse por cima do botão de salvas os dados */
+    button:hover {
+        background-color: #517FF6;
+        color: #FFFFFF;
+    }
+}
+
+/* Estilização do botão "X" que fecha o modal */
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
