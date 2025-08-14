@@ -80,6 +80,7 @@ Para rodar a aplicação, você precisará iniciar o backend e o frontend separa
 -   Navegue até a pasta do servidor e inicie-o:
     ```sh
     cd server
+    npm init
     npm start
     ```
 -   **(Opcional) Para desenvolvimento com reinicialização automática:**
